@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Inter';
+}
+
+
+
+.mainWrap {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainWrap > span {
+  color: #9e9e9e;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.card {
+    rotate: 2deg;
+    width: 400px;
+    height: 250px;
+    transition: transform 180ms ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: nonne;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+/*Test */
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 2.5rem;
+}
+
+.card.is-flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.cardFront {
+  border: 1px solid #e5e7eb;
+
+  background-image: url(/root/src/test2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cardBack {
+  color: white;
+  transform: rotateY(180deg);
+
+  background-image: url(/root/src/cardBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cardFront {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.cardTop {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cardTopText {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTopText h1 {
+  color: #fff;
+}
+
+.cardTopText span {
+  color: #b8b8b8;
+}
+
+.cardTop div img {
+    height: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+}
+
+
+.cardTopIcons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.cardTopIconsWrap {
+    position: relative;
+    display: inline-block;
+}
+
+.cardTopIconsTooltipCon {
+  visibility: hidden;
+
+  width: fit-content;
+  top: 80%;
+  left: 0%;
+  margin-left: calc(width / 2);
+
+  background-color: rgb(17, 17, 17);
+  color: #9e9e9e;
+  border: 2px solid rgb(32, 32, 32);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: left;
+  font-size: 14px;
+  border-radius: 15px;
+  padding: 5px 15px;
+  position: absolute;
+  z-index: 1;
+}
+
+.cardTopIconsWrap:hover .cardTopIconsTooltipCon {
+  visibility: visible;
+}
+
+.cardTopTooltipBan {
+  background-color: aqua;
+  width: 200px;
+}
+
+.cardTopIconsTooltipCon span:nth-child(1) {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+
+.cardTopIcons div img {
+  transition: .3s ease all;
+}
+
+.cardTopIcons div img:hover {
+  transform: scale(1.2);
+}
+
+
+.cardBttm {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.cardBttm a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.cardBttmL {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardBttmL span {
+  color: #b8b8b8;
+}
+
+.cardBttmL a {
+  color: #b8b8b8;
+  transition: .3s ease all;
+}
+
+.cardBttmL a img {
+  filter: brightness(none);
+  transition: .3s ease all;
+}
+
+.cardBttmL a:hover img:not(.cardBttmL div a img) {
+  filter: brightness(2.5);
+}
+
+.cardBttmL a:hover {
+  color: #fff;
+}
+
+
+.cardBttmR div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cardBttmR div a img {
+  height: 25px;
+  transition: .3s ease all;
+}
+
+.cardBttmR div a img:hover {
+  transform: translateY(-4px) rotate(-6deg);
+  filter: none;
+}
+
+
+
+
+.songWrap {
+  background-color: rgb(41, 41, 41);
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.songCover {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background-image: url(/root/src/songImg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  animation: spin 6s linear infinite;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.songCon h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.songCon span {
+  color: #b8b8b8;
+}
+
+
+
+
+
+
+
+
+
+
+
+.unselectable {
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noSelect:focus {
+    outline: none !important;
+}
+
+
+
+
+@media screen and (Max-width: 800px) {
+    .mainWrap {
+      scale: 0.8;
+    }
+}
