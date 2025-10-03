@@ -75,7 +75,7 @@ body {
 .cardFront {
   border: 1px solid #e5e7eb;
 
-  background-image: url(src/test2.png);
+  background-image: url(/src/test2.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,7 +85,7 @@ body {
   color: white;
   transform: rotateY(180deg);
 
-  background-image: url(src/cardBg.png);
+  background-image: url(/src/cardBg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -335,3 +335,4 @@ body {
     }
 
 }
+
